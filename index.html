@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriScore AI - Farmer Loan Readiness Assistant</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      
+      /* Responsive grid layouts */
+      .grid-2col {
+        display: grid !important;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 24px;
+      }
+      .grid-1-2 {
+        display: grid !important;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 24px;
+      }
+      .grid-3col {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      .grid-2col-equal {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      
+      /* Sidebar responsive styles */
+      .app-layout {
+        display: flex;
+        min-height: 100vh;
+      }
+      .app-sidebar {
+        width: 235px;
+        min-width: 235px;
+        background: #1F3D2B;
+        min-height: 100vh;
+        padding: 24px 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        transition: transform 0.3s ease-in-out;
+      }
+      .app-content {
+        flex: 1;
+        overflow-y: auto;
+        max-height: 100vh;
+        padding: 32px 40px;
+      }
+      .mobile-header {
+        display: none;
+      }
+      
+      /* Animations */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
+
+      /* Media Queries for Mobile Screens */
+      @media (max-width: 768px) {
+        .grid-2col, .grid-1-2, .grid-3col, .grid-2col-equal, .loan-coach-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px;
+        }
+        
+        .app-sidebar {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1000;
+          transform: translateX(-100%);
+        }
+        .app-sidebar.active {
+          transform: translateX(0);
+        }
+        .sidebar-overlay {
+          display: block !important;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.45);
+          z-index: 999;
+        }
+        .app-content {
+          padding: 20px 16px !important;
+          margin-top: 56px;
+        }
+        .mobile-header {
+          display: flex !important;
+          align-items: center;
+          justify-content: space-between;
+          height: 56px;
+          background: #1F3D2B;
+          padding: 0 16px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 99;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

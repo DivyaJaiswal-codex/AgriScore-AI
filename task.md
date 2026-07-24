@@ -1,0 +1,42 @@
+- [x] Setup and create directory folders (`src/services`, `src/utils`, `src/components`)
+- [x] Create `translationService.js` (i18n mappings)
+- [x] Create `weatherService.js` (OpenWeather/Open-Meteo calling logic)
+- [x] Create `voiceService.js` (Speech recognition and synthesis)
+- [x] Create `loanCalculator.js` (Scoring and XAI reason calculator)
+- [x] Create `pdfService.js` (jsPDF report generator)
+- [x] Create visual components:
+  - [x] `ScoreDial.jsx` (SVG Needle Dial)
+  - [x] `LoanScoreCard.jsx` (XAI results breakdown)
+  - [x] `WeatherCard.jsx` (Climate telemetry status)
+  - [x] `VoiceAssistant.jsx` (Interactive microphone control)
+  - [x] `LoanCoach.jsx` (Personalized improvement timeline and simulator)
+  - [x] `GovernmentSchemes.jsx` (Aligned schemes list card)
+  - [x] `HistoryChart.jsx` (Sparkline trend graph and history)
+- [x] Modify `index.html` for CSS responsiveness and stacked layout controls
+- [x] Refactor and modify `App.jsx` to load modular resources, connect states, and configure local storage
+- [x] Fix Voice Assistant Web Speech API, request explicit microphone permission, and handle errors (not-allowed, no-speech)
+- [x] Expand translations to support 13 major Indian languages via JS Proxy-based fallback architecture
+- [x] Embed Noto Sans Unicode TrueType fonts (.ttf) for all 10 regional scripts (Devanagari, Bengali, Tamil, Telugu, Gurmukhi, Kannada, Malayalam, Oriya, Arabic, Gujarati) to prevent character corruption
+- [x] Redesign the score gauge to be fully visible, centered, and mathematically mapped to risk thresholds
+- [x] Simplify technical jargon in i18n dictionaries to use farmer-first terminology (e.g. soil cards, passbooks, village names)
+- [x] Swap out standard checkboxes with custom finger-friendly large-tap selector rows in the What-If Simulator card
+- [x] Replace font scale placeholders (A-, A, A+) with localized text labels (e.g. Small, Medium, Large)
+- [x] Overhaul Hindi translations in dictionaries, calculators, and PDF generators to use native, everyday, farmer-first Hindi vocabulary instead of literal machine translation
+- [x] Resolve voice recognition network error blocks by adding automatic double-restart logic and friendly guidance banners
+- [x] Fully localize voice assistant alerts and speech recognition error messages across all 13 supported languages
+- [x] Overhaul Hindi localization to guarantee absolutely zero English words leak on the UI, history log, or PDF report when Hindi is active
+- [x] Re-architect Hindi translation files to render a warm, conversational native farmer tone, avoiding all literal banking jargon
+- [x] Implement modern visual color tag block accents before section titles inside generated PDF reports
+- [x] Redesign the Loan Readiness Score gauge with dynamic color mapping (Red/Orange/Green), smooth sweep pointer animations, zero-overlap needles, and localized agricultural advisories below the dial
+- [x] Redesign Dashboard main card layout to render in a two-column grid, including profile fields, dynamic AI summaries, weather/soil status badges, and aligned action button
+- [x] Request microphone permission explicitly via mediaDevices.getUserMedia({ audio: true }) BEFORE starting SpeechRecognition, closing stream tracks and raising localized warnings on deny
+- [x] Integrate dedicated start/stop toggle triggers on input microphone click callbacks in App.jsx to prevent recognition crash loops
+- [x] Redesign Voice Assistant block: simplified title ("🎤 आवाज़ से जानकारी भरें"), simplified description, compact error warning warning without large boxes, dual control buttons ("🔄 पुनः प्रयास करें" & "📝 स्वयं जानकारी भरें"), and automatic focus-scrolling to input fields on failure
+- [x] Overhaul Speech Recognition handler error mapping to log real console codes and explain the technical root causes (Secure context/HTTPS block, address bar system blocks, missing audio recording equipment)
+- [x] Remove the "BRAINWAVE 2026" header badge from the Dashboard component in App.jsx
+- [x] Remove the demoNote footer warning text from the Login screen in App.jsx and vertically re-center the card for a production-ready visual interface
+- [x] Remove the "हाल के मूल्यांकन" (Recent Reports) card section entirely from the Dashboard screen in App.jsx and restructure the Document Checklist card to render full-width with a grid alignment
+- [x] Remove the "जलवायु सेंसर" (Climate Sensor / WeatherCard) section and all weather UI widgets completely from the Dashboard screen in App.jsx
+- [x] Perform a complete farmer-conversational Hindi localization review across hi.js, loanCalculator.js, and pdfService.js, exchanging all government banking jargon (ऋण, मूल्यांकन, अनुपालन, प्रलेखन, संस्तुति, पात्रता) for everyday village farmer terms (लोन, जाँच, कागज़, सलाह, खेत, फसल की पैदावार, गाँव / जिला)
+- [x] Fix the Adjust Text Size accessibility controller, implementing custom zoom scaling on the outer containers of the main dashboard and login screens, saving selections in localStorage, and restoring font scale preferences on app reload
+- [x] Run production build and verify compliance
